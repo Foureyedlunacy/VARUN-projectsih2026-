@@ -8,11 +8,9 @@ async def home():
     return {"message":"VARUN"}
 
 origins = [
-    "http://localhost.tiangolo.com",
-    "https://localhost.tiangolo.com",
-    "http://localhost",
-    "http://localhost:5173",
-    "https://varun-projectsih2026-1.onrender.com/"
+    "https://varun-projectsih2026-1.onrender.com",  
+    "http://localhost:5173",                        
+    "http://localhost:3000",
 ]
 
 app.add_middleware(
@@ -22,7 +20,6 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
 
 
 if __name__=="__main__":
