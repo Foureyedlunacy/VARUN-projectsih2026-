@@ -12,6 +12,7 @@ origins = [
     "https://localhost.tiangolo.com",
     "http://localhost",
     "http://localhost:5173",
+    "https://varun-projectsih2026-1.onrender.com/"
 ]
 
 app.add_middleware(

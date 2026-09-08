@@ -9,7 +9,7 @@ const [users, setUsers] = useState([]);
 
 
 useEffect(() => {
-axios.get('http://localhost:8085/')
+axios.get('https://varun-projectsih2026.onrender.com/')
 .then(response => {
   console.log(response,"respom");
 setUsers(response.data); 
