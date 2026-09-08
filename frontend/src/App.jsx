@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, } from 'react';
 import axios from 'axios';
 
 
@@ -26,11 +26,18 @@ console.log(err.message,"error");
 
   return (
     <>
-    <div className="flex justify-center items-center h-100vh">
-      <div className="bg-red-900 h-72 w-72">
-        {users.message}
-
-      </div></div>
+    <div className="h-16 bg-blue-400 flex flex-row justify-around items-center">
+      <div className='h-full ml-10 flex-3 flex items-center font-black text-2xl'>
+  {users.message}
+      </div>
+      <ul className='flex flex-row justify-evenly flex-5 h-full items-center font-semibold'>
+        <li>HOME</li>
+        <li>ABOUT</li>
+        <li>DOCS</li>
+        <li>LOGIN</li>
+      </ul>
+    </div>
+ 
     </>
   )
 }
