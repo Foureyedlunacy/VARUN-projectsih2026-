@@ -1,6 +1,12 @@
 import React, { useEffect, useState, } from 'react';
 import axios from 'axios';
-
+import {Router, Routes, Route, Link, Navigate } from "react-router-dom";
+import Navbar from './maincomponents/Navbar';
+import Home from './pages/Home';
+import Docs from './pages/Docs';
+import About from './pages/About';
+import Signin from './pages/Signin';
+import Profile from './pages/Profile';
 
 function App() {
 const [users, setUsers] = useState([]);
@@ -26,17 +32,18 @@ console.log(err.message,"error");
 
   return (
     <>
-    <div className="h-16 bg-blue-400 flex flex-row justify-around items-center">
-      <div className='h-full ml-10 flex-3 flex items-center font-black text-2xl'>
-  {users.message}
-      </div>
-      <ul className='flex flex-row justify-evenly flex-5 h-full items-center font-semibold'>
-        <li>HOME</li>
-        <li>ABOUT</li>
-        <li>DOCS</li>
-        <li>LOGIN</li>
-      </ul>
-    </div>
+   <Navbar users={users.message}/>
+   <Routes>
+    <Route path="/" element={<Navigate to="/home"/>}/>
+    <Route path="/home" element={<Home/>}/>
+    <Route path="/docs" element={<Docs/>}/>
+    <Route path="/about" element={<About/>}/>
+    <Route path="/signin" element={<Signin/>}/>
+    <Route path="/signup" element={<signup/>}/>
+    <Route path="/profile" element={<Profile/>}/>
+    
+   </Routes>
+
  
     </>
   )
