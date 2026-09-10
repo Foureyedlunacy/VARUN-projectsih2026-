@@ -129,7 +129,7 @@ function Home() {
            
             </div>
             <div className='flex flex-col  bg-amber-500  h-[100vh]  md:h-[60vh] md:flex-row   justify-between'>
-                <div className='bg-gray-200 md:flex-1 z-10 h-full  '>
+                <div className='bg-gray-200 md:flex-1 z-10 h-[500px]  '>
 
 
 

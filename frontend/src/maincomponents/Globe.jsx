@@ -3,16 +3,16 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, useTexture } from '@react-three/drei';
 import * as THREE from 'three';
 
-// Sub-component for the 3D Sphere mesh
+
 function EarthMesh() {
   const meshRef = useRef();
 
-  // Standard NASA Blue Marble texture map
+  
   const [colorMap] = useTexture([
     'https://raw.githubusercontent.com/mrdoob/three.js/master/examples/textures/planets/earth_atmos_2048.jpg',
   ]);
 
-  // Subtle auto-rotation when user isn't touching
+
   useFrame((state, delta) => {
     if (meshRef.current) {
       meshRef.current.rotation.y += delta * 0.05;
@@ -21,7 +21,7 @@ function EarthMesh() {
 
   return (
     <group>
-      {/* Main Earth Sphere */}
+ 
       <mesh ref={meshRef}>
         <sphereGeometry args={[2, 64, 64]} />
         <meshStandardMaterial
@@ -31,7 +31,7 @@ function EarthMesh() {
         />
       </mesh>
 
-      {/* Atmospheric Glow Outer Sphere */}
+      
       <mesh>
         <sphereGeometry args={[2.08, 64, 64]} />
         <meshBasicMaterial
@@ -45,25 +45,25 @@ function EarthMesh() {
   );
 }
 
-// Main Canvas Wrapper Component
+
 export default function Globe() {
   return (
-    <div style={{ width: '100%', height: '100vh', background: '#050816' }}>
+    <div style={{ width: '100', height: '60vh', background: '#050816' }}>
       <Canvas
         camera={{ position: [0, 0, 6], fov: 45 }}
         gl={{ antialias: true }}
       >
-        {/* Lighting Setup */}
+     
         <ambientLight intensity={0.8} />
         <directionalLight position={[5, 3, 5]} intensity={2.5} />
         <pointLight position={[-5, -3, -5]} intensity={0.5} />
 
-        {/* The 3D Earth */}
+      
         <React.Suspense fallback={null}>
           <EarthMesh />
         </React.Suspense>
 
-        {/* Touch & Mouse Controls */}
+       
         <OrbitControls
           enableZoom={true}
           enablePan={false}
