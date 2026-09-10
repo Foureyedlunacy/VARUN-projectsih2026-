@@ -5,7 +5,7 @@ function Navbar(props) {
     const [loggedin,setloggedin]=useState(false)
   return (
     <div>
-       <div className="md:h-16 h-24 bg-blue-400 fixed top-0 left-0 w-full flex flex-col md:flex-row justify-around items-center">
+       <div className="md:h-16 z-100 h-24 bg-blue-400 fixed top-0 left-0 w-full flex flex-col md:flex-row justify-around items-center">
             <div className='md:h-full pl-10 md:flex-3 shadow-md md:shadow-none w-full  flex-1 sm:w-full flex flex-row justify-start items-center  font-black text-2xl'>
         {props.users || "backendoffline"}
             </div>

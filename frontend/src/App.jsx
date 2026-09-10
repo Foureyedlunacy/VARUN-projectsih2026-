@@ -7,6 +7,7 @@ import Docs from './pages/Docs';
 import About from './pages/About';
 import Signin from './pages/Signin';
 import Profile from './pages/Profile';
+import Globe from './maincomponents/Globe';
 
 function App() {
 const [users, setUsers] = useState([]);
@@ -32,7 +33,7 @@ console.log(err.message,"error");
 
   return (
     <>
-   <Navbar users={users.message}/>
+   <Navbar  users={users.message}/>
    <Routes>
     <Route path="/" element={<Navigate to="/home"/>}/>
     <Route path="/home" element={<Home/>}/>
@@ -41,6 +42,7 @@ console.log(err.message,"error");
     <Route path="/signin" element={<Signin/>}/>
     <Route path="/signup" element={<signup/>}/>
     <Route path="/profile" element={<Profile/>}/>
+    <Route path="/globe" element={<Globe/>}/>
     
    </Routes>
 

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { BiBookAlt, BiDownload, BiFullscreen, BiLocationPlus, BiMap, BiNote, BiNotepad, BiSleepy } from 'react-icons/bi'
 import { BsFillEyeFill } from 'react-icons/bs'
+import Globe from '../maincomponents/Globe';
 
 function Home() {
     const [valuela,setValuela]=useState();
@@ -8,8 +9,8 @@ function Home() {
       const [valuelong,setValuelong]=useState();
     const [directionlong,setDirectionlong]=useState();
   return (
-    <div className='bg-red-900 mt-24 md:mt-16 flex flex-col md:flex-row h-[210vh]  md:h-[84vh] w-full'>
-        <div className=' md:fixed md:flex w-[345px] md:top-16 md:left-0  bg-gradient-to-br from-blue-900 to-blue-500 to-green-400 flex-1 flex justify-between md:h-[91vh] flex-col '>
+    <div className=' mt-24 md:mt-16 flex flex-col md:flex-row h-[210vh]  md:h-[84vh] w-full'>
+        <div className=' md:fixed md:flex w-full md:w-[345px] md:top-16 md:left-0  bg-gradient-to-br from-blue-900 to-blue-500 to-green-400 flex-1 flex justify-between md:h-[91vh] flex-col '>
             <div className='p-5 font-bold text-blue-200'>
             <h1 className='text-5xl text-blue-200'>Welcome</h1>
             <h2  >
@@ -24,7 +25,7 @@ function Home() {
             <ul className='bg-white p-5 h-[20vh] md:flex-1  overflow-y-auto scrollbar-hide'><form>
                     <li className='w-full border-4 border-b-0 border-gray-200 bg-white flex justify-start items-center h-10'>
                         <input className='m-2' type="checkbox" name='temperature'/>
-                    <label className='font-semibold' for="temperature">Temperature</label>
+                    <label className='font-semibold' htmlFor="temperature">Temperature</label>
                     </li>
                     <li className='w-full border-4 border-b-0 border-gray-200 bg-white flex justify-start items-center h-10'>
                         <input className='m-2' type="checkbox" name='salinity'/>
@@ -128,9 +129,12 @@ function Home() {
            
             </div>
             <div className='flex flex-col  bg-amber-500  h-[100vh]  md:h-[60vh] md:flex-row   justify-between'>
-                <div className='bg-gray-200 md:flex-1  h-full  '>
-                    3d to add!!
+                <div className='bg-gray-200 md:flex-1 z-10 h-full  '>
 
+
+
+
+<Globe/>
                 </div>
                 <div className='bg-white h-full p-5 pt-9'>
                     <ul className='flex flex-col gap-2'>
